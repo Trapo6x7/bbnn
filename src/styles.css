@@ -109,7 +109,7 @@ a:focus-visible {
 .portrait {
   position: relative;
   background: #353535;
-  aspect-ratio: 3/4;
+  aspect-ratio: 4/5;
   min-height: 0;
   overflow: hidden;
   display: grid;
