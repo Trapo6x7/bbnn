@@ -143,21 +143,59 @@ progress::-moz-progress-bar {
   border-color: #353535;
 }
 .choice.correct {
-  background: #fff;
-  border: 2px solid #171717;
-  color: #171717;
+  background: #175b39;
+  border-color: #66d99b;
+  color: #fff;
 }
 .choice.incorrect {
-  background: #fff0f0;
-  border-color: var(--accent);
-  color: #aa1117;
+  background: #8c2028;
+  border-color: #ff8b92;
+  color: #fff;
 }
 .feedback {
   margin-top: 24px;
 }
-.feedback p {
-  color: var(--muted);
-  margin: 4px 0 16px;
+.answer-result {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid;
+  border-left-width: 4px;
+  border-radius: 8px;
+}
+.answer-success {
+  background: #123522;
+  border-color: #66d99b;
+  color: #c0f5d5;
+}
+.answer-error {
+  background: #421b20;
+  border-color: #ff8b92;
+  color: #ffd1d5;
+}
+.result-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 700;
+}
+.answer-result > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.answer-result strong {
+  font-size: 18px;
+}
+.answer-result p {
+  color: inherit;
+  margin: 4px 0 0;
 }
 .primary {
   display: flex;
