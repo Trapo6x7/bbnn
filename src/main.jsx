@@ -33,10 +33,10 @@ function App() {
   return <div className="app-shell">
     <header className="header"><h1><a className="brand" href="./"><img src={logo} width="145" height="75" alt="Black Block ou Néo Nazi ?" /></a></h1></header>
     <main>
-        <div className="round-info"><span>{finished ? 'PARTIE TERMINÉE' : `PHOTO ${String(index + 1).padStart(2, '0')}`} <span className="muted">/ {String(questions.length).padStart(2, '0')}</span></span><span>{score} bonne{score > 1 ? 's' : ''} réponse{score > 1 ? 's' : ''}</span></div>
-        <progress aria-label="Progression de la partie" max={questions.length} value={finished ? questions.length : index} />
+        <div className="progress" role="progressbar" aria-label="Progression de la partie" aria-valuemin={0} aria-valuemax={questions.length} aria-valuenow={finished ? questions.length : index}><span className="progress-fill" style={{ transform: `scaleX(${finished ? 1 : index / questions.length})` }} /></div>
         {finished ? <section className="results" aria-labelledby="result-title"><h2 id="result-title">{score === questions.length ? 'Un sans-faute.' : 'Bien joué !'}</h2><div className="big-score">{score}<span> / {questions.length}</span></div><p>{Math.round(score / questions.length * 100)} % de bonnes réponses · Meilleur score : {best} %</p><button className="primary" type="button" onClick={restart}>Rejouer</button><p className="save-note" role="status">{storageError ? 'Sauvegarde indisponible : votre navigateur refuse le stockage local.' : 'Score enregistré sur cet appareil.'}</p></section> : <QuestionCard key={questions[index].id} question={questions[index]} options={options} selected={answers[questions[index].id]} onAnswer={option => setAnswers(previous => previous[questions[index].id] !== undefined ? previous : { ...previous, [questions[index].id]: option })} onNext={next} last={index === questions.length - 1} />}
     </main>
+    <footer className="footer">trapo.js</footer>
   </div>;
 }
 
