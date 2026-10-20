@@ -36,15 +36,15 @@ a:focus-visible {
 .app-shell {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
   max-width: 784px;
   margin: auto;
   padding: 0 20px 2%;
 }
 .app-shell > main {
   display: flex;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   flex-direction: column;
   min-height: 0;
 }
@@ -109,7 +109,7 @@ a:focus-visible {
 .portrait {
   position: relative;
   background: #353535;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/4;
   min-height: 0;
   overflow: hidden;
   display: grid;
@@ -220,6 +220,8 @@ a:focus-visible {
 }
 @media (min-width: 760px) {
   .app-shell {
+    height: 100vh;
+    height: 100dvh;
     padding-inline: 32px;
   }
   .app-shell > main {
