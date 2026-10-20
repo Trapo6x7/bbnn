@@ -1,7 +1,7 @@
 // Le dossier de chaque photo définit la réponse, sans analyse de son contenu.
 export const options = [
-  { id: 'bb', label: 'Black Block' },
-  { id: 'nn', label: 'Néo Nazi' },
+  { id: 'bb', label: 'BlackBlock' },
+  { id: 'nn', label: 'NéoNazi' },
 ];
 
 const images = import.meta.glob('/assets/{bb,nn}/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}', {

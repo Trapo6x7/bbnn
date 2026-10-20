@@ -34,14 +34,37 @@ a:focus-visible {
   outline-offset: 4px;
 }
 .app-shell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  height: 100dvh;
   max-width: 784px;
   margin: auto;
-  padding: 0 20px 32px;
+  padding: 0 20px 2%;
+}
+.app-shell > main {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  min-height: 0;
+}
+.round-info,
+progress {
+  flex-shrink: 0;
+}
+.question-card {
+  display: grid;
+  grid-template-rows: minmax(80px, 1fr) auto;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 .header {
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
-  padding: 24px 0;
+  padding: clamp(8px, 3dvh, 24px) 0;
 }
 .header h1 {
   margin: 0;
@@ -95,7 +118,8 @@ progress::-moz-progress-bar {
 .portrait {
   position: relative;
   background: #353535;
-  aspect-ratio: 16/10;
+  aspect-ratio: 4/3;
+  min-height: 0;
   overflow: hidden;
   display: grid;
   place-items: center;
@@ -155,48 +179,6 @@ progress::-moz-progress-bar {
 .feedback {
   margin-top: 24px;
 }
-.answer-result {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px;
-  margin-bottom: 16px;
-  border: 1px solid;
-  border-left-width: 4px;
-  border-radius: 8px;
-}
-.answer-success {
-  background: #123522;
-  border-color: #66d99b;
-  color: #c0f5d5;
-}
-.answer-error {
-  background: #421b20;
-  border-color: #ff8b92;
-  color: #ffd1d5;
-}
-.result-icon {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  font-size: 24px;
-  font-weight: 700;
-}
-.answer-result > div {
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-.answer-result strong {
-  font-size: 18px;
-}
-.answer-result p {
-  color: inherit;
-  margin: 4px 0 0;
-}
 .primary {
   display: flex;
   align-items: center;
@@ -217,6 +199,7 @@ progress::-moz-progress-bar {
 .results {
   padding: 32px 0;
   text-align: center;
+  overflow-y: auto;
 }
 .results h2 {
   margin: 0;
@@ -248,8 +231,14 @@ progress::-moz-progress-bar {
   .app-shell {
     padding-inline: 32px;
   }
+  .app-shell > main {
+    flex: 1;
+  }
+  .portrait {
+    aspect-ratio: auto;
+  }
   .header {
-    padding-block: 32px;
+    padding-block: clamp(8px, 3dvh, 32px);
   }
 }
 @media (prefers-reduced-motion: reduce) {
