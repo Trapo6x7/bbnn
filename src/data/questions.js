@@ -1,3 +1,5 @@
+import mobileFacePositions from './mobileFacePositions.json';
+
 // Le dossier de chaque photo définit la réponse, sans analyse de son contenu.
 export const options = [
   { id: 'bb', label: 'BlackBlock' },
@@ -123,6 +125,7 @@ export const questions = Object.entries(images).map(([path, image]) => {
     image,
     alt: `Photo de la catégorie ${label}`,
     face: facePositions[path] ?? { x: 50, y: 30 },
+    mobileFace: mobileFacePositions[path],
     answer: category,
     explanation: `Cette photo appartient à la catégorie ${label}.`,
   };

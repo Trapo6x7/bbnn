@@ -23,6 +23,8 @@ Les photos de `assets/bb/` et `assets/nn/` sont intégrées automatiquement par 
 
 Les cadrages des vingt photos sont définis dans `facePositions` : `x` et `y` positionnent le cadrage en pourcentage, `zoom` définit le grossissement. Pour les nouvelles photos sans configuration, le cadrage par défaut est `{ x: 50, y: 30 }` avec un zoom de 2,5. Il n’y a pas de détection automatique des visages. La vue révélée montre toute l’image sans découpe.
 
+Les cadrages mobiles sont définis dans `src/data/mobileFacePositions.json` et s’appliquent sous 760 px, au format 4:5. Les cadrages desktop restent dans `facePositions`. Sans réglage mobile, le cadrage desktop est réutilisé.
+
 Toutes les photos sont mélangées à chaque partie. Un point par bonne réponse, aucun point négatif. Une réponse est définitive jusqu’à la prochaine partie.
 
 ## Organisation
